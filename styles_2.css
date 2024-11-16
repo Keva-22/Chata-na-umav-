@@ -1,0 +1,385 @@
+/* Základní nastavení těla stránky */
+body {
+    padding-top: 80px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/exterier-leto.jpg') center center / cover no-repeat;
+    height: 60vh;
+    color: white;
+    text-align: center;
+    padding: 5% 0;
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron .lead {
+    font-size: 1.5rem;
+}
+
+/* Navigace */
+.navbar-nav .nav-link {
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Nadpisy */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #ffc107;
+    border-radius: 2px;
+}
+
+/* Sekce */
+.centered-section,
+.centered-carousel-section {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.centered-section h3,
+.centered-carousel-section h3 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Styl pro textové odstavce */
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Galerie */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Tlačítka v carouselu */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: background-color 0.3s;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #ffc107;
+}
+
+/* Kontakt */
+.contact-section {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-columns p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #555;
+}
+
+.contact-columns i {
+    margin-right: 10px;
+    color: #ffc107;
+}
+
+.contact-columns a {
+    color: #007bff;
+    text-decoration: none;
+}
+.contact-columns a:hover {
+    text-decoration: underline;
+}
+
+
+.calendar-nav:hover {
+    background-color: #45a049;
+}
+
+/* Mobilní layout */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .carousel-inner img {
+        height: 300px;
+    }
+
+    .contact-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Kalendář */
+.calendar {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.calendar-nav {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-nav:hover {
+    background-color: #45a049;
+}
+
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.day.empty {
+    visibility: hidden;
+}
+
+.day.free {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.day.booked {
+    background-color: #f44336;
+    color: white;
+}
+
+.day:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+    .calendar {
+        width: 100%;
+    }
+
+    .day {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+
+
+/* Navigace */
+.navbar {
+    padding: 1.5rem 1rem; /* Zvýšení výšky lišty */
+    background-color: #343a40; /* Tmavší barva pro lepší kontrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Jemný stín */
+    width: 100%; /* Šířka navigace přes celou obrazovku */
+    position: fixed; /* Fixní umístění nahoře */
+    top: 0; /* Připevnění k hornímu okraji */
+    z-index: 1000; /* Zajištění viditelnosti nad ostatním obsahem */
+}
+
+body {
+    padding-top: 95px; /* Přidání prostoru pro lištu, aby nepřekrývala obsah */
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Zvětšení velikosti názvu */
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: #ffc107;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Zvětšení velikosti textu odkazu */
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Jumbotron */
+.jumbotron {
+    margin-top: 0;
+    padding: 5% 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/exterier-leto.jpg') center center / cover no-repeat;
+    height: 60vh;
+    color: white;
+    text-align: center;
+}
+
+/* Základní styl pro text (p) */
+p {
+    color: white; /* Změna barvy textu na bílou */
+    font-size: 1.2rem; /* Zvýšení velikosti písma */
+    line-height: 1.8; /* Zvýšení řádkování pro lepší čitelnost */
+    margin-bottom: 1rem; /* Vytvoření konzistentního odsazení mezi odstavci */
+}
+
+/* Specifický styl pro Jumbotron, aby text zůstal čitelný na tmavém pozadí */
+.jumbotron p {
+    color: white; /* Barva textu v Jumbotronu */
+    font-size: 1.5rem; /* Zvýšení velikosti písma pro výraznost */
+}
+
+/* Responsivní úpravy pro menší zařízení */
+@media (max-width: 768px) {
+    p {
+        font-size: 1rem; /* Menší písmo pro mobily */
+        line-height: 1.6; /* Udržení čitelnosti na menších obrazovkách */
+    }
+
+    .jumbotron p {
+        font-size: 1.2rem; /* Menší velikost písma pro mobily */
+    }
+}
+/* Specifický styl pro sekci #uvod */
+#uvod {
+    color: #f0e68c; /* Světle žlutá barva písma */
+    background-color: #333; /* Tmavé pozadí pro lepší kontrast */
+    padding: 20px; /* Přidání vnitřního odsazení */
+    border-radius: 8px; /* Jemně zaoblené rohy sekce */
+}
+
+/* Změna barvy pro nadpisy a odstavce v sekci #uvod */
+#uvod h3 {
+    color: #ffcc00; /* Zlatá barva pro nadpisy */
+}
+
+#uvod p {
+    color: #ffffff; /* Bílá barva pro odstavce */
+    font-size: 1.2rem; /* Zvýšení velikosti písma */
+    line-height: 1.8; /* Lepší čitelnost */
+}
+
+
+
+/* Galerie okolí Lipna */
+#surroundingsCarousel .carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#surroundingsCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#surroundingsCarousel .carousel-control-prev-icon,
+#surroundingsCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+#surroundingsCarousel .carousel-control-prev-icon:hover,
+#surroundingsCarousel .carousel-control-next-icon:hover {
+    background-color: #ffc107;
+}
